@@ -1,0 +1,98 @@
+package xyz;
+
+abstract public class AbstractClass {
+	abstract public void Call();
+	abstract public void videocall();
+	abstract public void recordVideo();
+	
+	
+
+}
+package xyz;
+
+public class Phone extends AbstractClass {
+	public void Call()
+	{
+		System.out.println("First feature of phone is calling");
+	}
+
+	@Override
+	public void videocall() {
+		System.out.println("First feature of phone is videocalling");
+		
+	}
+
+	@Override
+	public void recordVideo() {
+		System.out.println("First feature of phone  is record   calling");
+		
+	}
+
+		
+	}
+
+package xyz;
+
+public class SmartPhone extends Phone {
+	public void videocall()
+	{
+		System.out.println("The feature of this phone is video calling");
+	}
+	
+		
+
+	@Override
+	public void recordVideo() {
+		System.out.println("First feature of phone  is record   calling");
+		
+	}
+
+
+}
+
+package xyz;
+
+public class PhoneAbc extends Phone{
+	public void recordVideo()
+	{
+		System.out.println("the feature of this phone is videocalling");
+	}
+	@Override
+	public void videocall() {
+		System.out.println("First feature of phone is videocalling");
+		
+	}
+
+	
+		
+	}
+
+
+package xyz;
+
+public class MultiPhone {
+		AbstractClass cellphone = null;
+		MultiPhone(AbstractClass e){
+			cellphone = e;
+		}
+		public void display() {
+			cellphone.recordVideo();
+		}
+	}
+
+package xyz;
+
+public class main {
+	
+	public static void main(String[] args) 
+	{
+	
+		MultiPhone nokia = new MultiPhone(new SmartPhone());
+		nokia.display();
+		
+		
+		
+	}
+
+}
+
